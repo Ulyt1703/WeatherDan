@@ -12,27 +12,19 @@
 <body>
 
     <div class="app-container">
-        <div class="father-navigation">
+        <div id="block-weather" class="father-navigation">
             <div class="navigation">
                 <ul>
                     <li>
-                        <a href="#">
+                        <a href="#block-weather">
                             <span class="icon">
                                 <i class="fa-solid fa-house"></i>
                             </span>
                             <span class="text">Home</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="#">
-                            <span class="icon">
-                                <i class="fa-solid fa-user"></i>
-                            </span>
-                            <span class="text">Profile</span>
-                        </a>
-                    </li>
                     <li class="active">
-                        <a href="#">
+                        <a href="#block-comment">
                             <span class="icon">
                                 <i class="fa-solid fa-comment"></i>
                             </span>
@@ -40,19 +32,11 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="#block-facts">
                             <span class="icon">
                                 <i class="fa-solid fa-camera"></i>
                             </span>
                             <span class="text">Photos</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="icon">
-                                <i class="fa-solid fa-gear"></i>
-                            </span>
-                            <span class="text">Settings</span>
                         </a>
                     </li>
                     <div class="indicator"></div>
@@ -73,6 +57,20 @@
                         </svg>
                     </div>
                 </label>
+                <div class="loader">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                    <div class="bar4"></div>
+                    <div class="bar5"></div>
+                    <div class="bar6"></div>
+                    <div class="bar7"></div>
+                    <div class="bar8"></div>
+                    <div class="bar9"></div>
+                    <div class="bar10"></div>
+                    <div class="bar11"></div>
+                    <div class="bar12"></div>
+                </div>
             </form>
             <button type="button" class="btn-search"><p class="text-btn">OK</p></button>
 
@@ -81,17 +79,39 @@
             </div>
         </div>
         <div class="comment">
-            <h2 class="comment-title">Share Your Reaction!</h2>
+            <h2 id="block-comment" class="comment-title">Share Your Reaction!</h2>
+            <h3 class="comment__title-name">Enter yout name!</h3>
+            <input class="comment__input-name" placeholder="Name" type="text">
             <textarea type="text" class="comment-area" placeholder="Your reaction!" name="" id=""></textarea>
             <button type="button" class="comment-send">
                 <span class="transition"></span>
                 <span class="gradient"></span>
                 <span class="label">Send</span>
             </button>
+            <ul>
+                <li>
+                    <div class="message-loader">
+                        <div class="child"></div>
+                    </div>
+                </li>
+            </ul>
             <div class="message">
-            
+                
+            </div>
+            <div id="commentContainer">
+
             </div>
         </div>
+        <div id="block-facts" class="block-facts">
+            <h2 class="title-facts">Interesting fact</h2>
+            <img class="img-antarctica" src="./img/Antarctica.jpeg" alt="">
+            <p class="txt-facts">Antarctica is the driest continent, <br> with some areas not having <br> seen rain or snow <br> for millions of years.</p>
+        </div>
+        <footer class="footer-main">
+            <p class="email-txt">danildovgop@gmail.com</p>
+            <p class="number-txt">+380950825172</p>
+            <p class="copyright-txt">Copyright © 2024</p>
+        </footer>
     </div>
     
 
