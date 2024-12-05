@@ -48,6 +48,7 @@ body {
     }
     .logo-main{
       position: absolute;
+      top: 0;
     }
     .logo-img{
       padding: 25px 0 0 25px;
