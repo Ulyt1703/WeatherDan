@@ -9,10 +9,14 @@ let lengthArray = 3
 function loadComments() {
     let commentsName = JSON.parse(localStorage.getItem("commentsName")) || []
     let comments = JSON.parse(localStorage.getItem("comments")) || []
-    
+
     if (commentsName.length !== comments.length) {
         console.error("Масиви імен та коментарів не збігаються за розміром!")
         return
+    }
+
+    if (comments.length > 0) {
+        commentContainer.style.display = "block"
     }
 
     commentsName.forEach((name, index) => {
@@ -34,27 +38,26 @@ function loadComments() {
     })
 }
 
-
 document.addEventListener("DOMContentLoaded", loadComments)
 
-btnSend.addEventListener('click', function() {
-    errorText.textContent = ''
+btnSend.addEventListener("click", function () {
+    errorText.textContent = ""
     let commentAreaValue = commentArea.value.trim()
     let inputNameValue = inputName.value.trim()
 
     if (commentAreaValue !== "" && inputNameValue !== "") {
         let comments = JSON.parse(localStorage.getItem("comments")) || []
         let commentsName = JSON.parse(localStorage.getItem("commentsName")) || []
-        
+
         comments.push(commentAreaValue)
         commentsName.push(inputNameValue)
-        
+
         localStorage.setItem("comments", JSON.stringify(comments))
         localStorage.setItem("commentsName", JSON.stringify(commentsName))
 
         messageLoader.classList.add("visible__message-loader")
-        
-        setTimeout(function(){
+
+        setTimeout(function () {
             messageLoader.classList.remove("visible__message-loader")
 
             let commentBlock = document.createElement("div")
@@ -73,6 +76,10 @@ btnSend.addEventListener('click', function() {
 
             commentContainer.appendChild(commentBlock)
 
+            if (comments.length === 1) {
+                commentContainer.style.display = "block"
+            }
+
             commentArea.value = ""
             inputName.value = ""
         }, 900)
@@ -82,6 +89,7 @@ btnSend.addEventListener('click', function() {
         errorText.classList.add("message__error-text")
     }
 })
+
 
 
 let currentIndex = 0
@@ -119,6 +127,10 @@ function addRandomComment() {
         commentBlock.appendChild(userName)
         commentBlock.appendChild(newMessage)
 
+        if (commentContainer.childElementCount === 0) {
+            commentContainer.style.display = "block"
+        }
+
         commentContainer.appendChild(commentBlock)
 
         availableNames.splice(randomNameIndex, 1)
@@ -128,6 +140,7 @@ function addRandomComment() {
         setTimeout(addRandomComment, randomTime)
     }
 }
+
 
 addRandomComment()    
     }, randomCom())

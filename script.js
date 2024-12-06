@@ -1,13 +1,9 @@
+window,addEventListener("load", function(){
+    window.scrollTo(0, 0)
+})
+
 let $list = document.querySelectorAll("li")
 let navBlock = document.querySelector(".navigation")
-
-window.addEventListener("scroll", function(){
-    let scrollYValue = window.scrollY
-    if(scrollYValue > 1){
-        navBlock.style.bottom = '0px'
-        navBlock.style.transform = 'translateY(0px)'
-    }
-})
 
 function activeLink(){
     $list.forEach(($li) => {
@@ -35,8 +31,4 @@ commentSend.addEventListener("click", function(){
     setTimeout(function(){
         commentSend.classList.remove("animated__comment-send")
     },50)
-})
-
-window,addEventListener("load", function(){
-    window.scrollTo(0, 0)
 })

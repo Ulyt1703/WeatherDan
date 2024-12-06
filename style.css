@@ -68,9 +68,9 @@ body {
     }
     .navigation{
         position: fixed;
-        transform: translateY(100px);
         width: 200px;
         height: 70px;
+        bottom: 0;
         background:#fff;
         display: flex;
         justify-content: center;
@@ -574,6 +574,7 @@ ul {
 }
 
     #commentContainer{
+      display: none;
         color: #FFF;
         user-select: none;
         padding: 25px 190px 25px 25px;
@@ -718,6 +719,7 @@ ul {
     padding: 0;
 }
 #commentContainer{
+  display: none;
   color: #FFF;
   user-select: none;
   padding: 25px 190px 25px 25px;
