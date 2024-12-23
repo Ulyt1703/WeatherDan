@@ -181,6 +181,9 @@ body {
         align-items: center;
         justify-content: center;
     }
+    .number-txt{
+      content: '';
+    }
     .title-search {
         text-align: center;
         color: #FFF;
