@@ -148,7 +148,7 @@ addRandomComment()
 
 
 
-function deleteComment(){
+/* function deleteComment(){
     let deleteCom = localStorage.removeItem("comments")
     return deleteCom
 }
@@ -160,4 +160,4 @@ function deleteNames(){
     return deleteName
 }
 
-deleteNames()
+deleteNames() */
