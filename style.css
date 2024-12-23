@@ -182,7 +182,7 @@ body {
         justify-content: center;
     }
     .number-txt{
-      content: '';
+      text-decoration: none;
     }
     .title-search {
         text-align: center;
